@@ -9,4 +9,4 @@ Blender VRoid Rig Addon
 ![](doc/done.png)
 
 # Download this blender addon
-https://github.com/PMZeroSkyline/VRoidRig/releases/tag/v1.0.0
+https://github.com/PMZeroSkyline/VRoidRig/releases/
