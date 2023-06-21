@@ -29,7 +29,6 @@ def add_ik_target_bone(armature_obj, bone_name, ik_target_bone_name, size, offse
     ik_target_bone.tail = bone.tail + Vector((0, offset + size, 0))
     ik_target_bone.parent = root
     bpy.context.view_layer.update()
-    bpy.ops.object.mode_set(mode='OBJECT')
     set_mode(armature_obj, 'OBJECT')
 
 def add_bone_offset(armature_obj, head_bone_name, tail_bone_name, offset):
@@ -148,6 +147,8 @@ def disconnect_bones(armature_obj, bone_name, bone_parent_name):
     bone_a.select = True
     bone_b.select = True
     bpy.ops.armature.parent_clear(type='DISCONNECT')
+    set_mode(armature_obj, 'OBJECT')
+    bpy.context.view_layer.update()
 
 class VRR_OT_Rig(bpy.types.Operator):
     bl_idname = "vrr.rig"
