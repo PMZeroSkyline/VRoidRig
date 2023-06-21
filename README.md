@@ -5,7 +5,7 @@ Blender VRoid Rig Addon
 ![](doc/import_vrm.png)
 2. Select Armature click Rig button in VRoidRig view 3d panel.
 ![](doc/rig.png)
-3. You're done!
+3. Done!
 ![](doc/done.png)
 
 # Download this blender addon
