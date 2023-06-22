@@ -163,7 +163,6 @@ class VRR_OT_Rig(bpy.types.Operator):
                 armature_obj = obj
                 break
 
-
         # disconnect root
         disconnect_bones(armature_obj, "J_Bip_C_Hips", "Root")
         
@@ -176,24 +175,18 @@ class VRR_OT_Rig(bpy.types.Operator):
         add_ik_bone(armature_obj, "J_Bip_R_LowerArm", "IK_Arm_R", 0.2)
         add_ik_bone(armature_obj, "J_Bip_L_LowerLeg", "IK_Leg_L", 0.2)
         add_ik_bone(armature_obj, "J_Bip_R_LowerLeg", "IK_Leg_R", 0.2)
-        add_ik_bone(armature_obj, "J_Bip_C_Neck", "IK_Neck", 0.2)
-        add_ik_bone(armature_obj, "J_Bip_C_Chest", "IK_Chest", 0.2)
 
         # add IK Target
         add_ik_target_bone(armature_obj, "J_Bip_L_UpperArm", "IKT_Arm_L", 0.2, 0.5)
         add_ik_target_bone(armature_obj, "J_Bip_R_UpperArm", "IKT_Arm_R", 0.2, 0.5)
         add_ik_target_bone(armature_obj, "J_Bip_L_UpperLeg", "IKT_Leg_L", -0.2, -0.5)
         add_ik_target_bone(armature_obj, "J_Bip_R_UpperLeg", "IKT_Leg_R", -0.2, -0.5)
-        add_ik_target_bone(armature_obj, "J_Bip_C_UpperChest", "IKT_Neck", 0.2, 0.5)
-        add_ik_target_bone(armature_obj, "J_Bip_C_Spine", "IKT_Chest", 0.2, 0.5)
 
         # add IK constraint
         add_ik_constraint(armature_obj, "J_Bip_L_LowerArm", "IK_Arm_L", "IKT_Arm_L", 180)
         add_ik_constraint(armature_obj, "J_Bip_R_LowerArm", "IK_Arm_R", "IKT_Arm_R", 0)
         add_ik_constraint(armature_obj, "J_Bip_L_LowerLeg", "IK_Leg_L", "IKT_Leg_L", -90)
         add_ik_constraint(armature_obj, "J_Bip_R_LowerLeg", "IK_Leg_R", "IKT_Leg_R", -90)
-        add_ik_constraint(armature_obj, "J_Bip_C_Neck", "IK_Neck", "IKT_Neck", -90)
-        add_ik_constraint(armature_obj, "J_Bip_C_Chest", "IK_Chest", "IKT_Chest", -90)
 
         # set ik display shape
         set_bone_shape_to_plane(armature_obj, "Root", Vector((90, 0, 0)), Vector((0.5, 0.5, 0.5)))
@@ -202,14 +195,11 @@ class VRR_OT_Rig(bpy.types.Operator):
         set_bone_shape_to_sphere(armature_obj, "IK_Arm_R", Vector((0,0,90)), Vector((0.5, 0.5, 0.5)))
         set_bone_shape_to_sphere(armature_obj, "IK_Leg_L", Vector((90,0,0)), Vector((0.5, 0.5, 0.5)))
         set_bone_shape_to_sphere(armature_obj, "IK_Leg_R", Vector((90,0,0)), Vector((0.5, 0.5, 0.5)))
-        set_bone_shape_to_sphere(armature_obj, "IK_Neck", Vector((0,0,180)), Vector((0.5, 0.5, 0.5)))
-        set_bone_shape_to_sphere(armature_obj, "IK_Chest", Vector((0,0,180)), Vector((0.5, 0.5, 0.5)))
+        
         set_bone_shape_to_cone(armature_obj, "IKT_Arm_L", Vector((0,0,30)), Vector((0.2, 0.2, 0.2)))
         set_bone_shape_to_cone(armature_obj, "IKT_Arm_R", Vector((0,0,-30)), Vector((0.2, 0.2, 0.2)))
         set_bone_shape_to_cone(armature_obj, "IKT_Leg_L", Vector((180,0,30)), Vector((0.2, 0.2, 0.2)))
         set_bone_shape_to_cone(armature_obj, "IKT_Leg_R", Vector((180,0,-30)), Vector((0.2, 0.2, 0.2)))
-        set_bone_shape_to_cone(armature_obj, "IKT_Neck", Vector((-90,180,0)), Vector((0.2, 0.2, 0.2)))
-        set_bone_shape_to_cone(armature_obj, "IKT_Chest", Vector((-90,0,0)), Vector((0.2, 0.2, 0.2)))
 
         # set controll rig deform
         set_bone_deform(armature_obj, "Root", False)
@@ -217,14 +207,11 @@ class VRR_OT_Rig(bpy.types.Operator):
         set_bone_deform(armature_obj, "IK_Arm_R", False)
         set_bone_deform(armature_obj, "IK_Leg_L", False)
         set_bone_deform(armature_obj, "IK_Leg_R", False)
-        set_bone_deform(armature_obj, "IK_Neck", False)
-        set_bone_deform(armature_obj, "IK_Chest", False)
+        
         set_bone_deform(armature_obj, "IKT_Arm_L", False)
         set_bone_deform(armature_obj, "IKT_Arm_R", False)
         set_bone_deform(armature_obj, "IKT_Leg_L", False)
         set_bone_deform(armature_obj, "IKT_Leg_R", False)
-        set_bone_deform(armature_obj, "IKT_Neck", False)
-        set_bone_deform(armature_obj, "IKT_Chest", False)
 
         # set controll rig view
         set_bone_wire(armature_obj, "Root", True)
@@ -232,14 +219,11 @@ class VRR_OT_Rig(bpy.types.Operator):
         set_bone_wire(armature_obj, "IK_Arm_R", True)
         set_bone_wire(armature_obj, "IK_Leg_L", True)
         set_bone_wire(armature_obj, "IK_Leg_R", True)
-        set_bone_wire(armature_obj, "IK_Neck", True)
-        set_bone_wire(armature_obj, "IK_Chest", True)
+        
         set_bone_wire(armature_obj, "IKT_Arm_L", True)
         set_bone_wire(armature_obj, "IKT_Arm_R", True)
         set_bone_wire(armature_obj, "IKT_Leg_L", True)
         set_bone_wire(armature_obj, "IKT_Leg_R", True)
-        set_bone_wire(armature_obj, "IKT_Neck", True)
-        set_bone_wire(armature_obj, "IKT_Chest", True)
 
         # to pose mode
         set_mode(armature_obj, 'POSE')
