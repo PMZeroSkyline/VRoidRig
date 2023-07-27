@@ -1,8 +1,8 @@
 # VRoidRig
 Blender VRoid Rig Addon
 # install
-Download Add-On https://github.com/PMZeroSkyline/VRoidRig/releases
-Open blender
+1. Download this blender addon [https://github.com/PMZeroSkyline/VRoidRig/releases/]
+2. Open blender
  - Edit > Preferences > Add-Ons
  - Click “Install…” button in the top right of the window
  - Find the Add-On file to install
@@ -15,5 +15,3 @@ Open blender
 3. Done!
 ![](doc/done.png)
 
-# Download this blender addon
-https://github.com/PMZeroSkyline/VRoidRig/releases/
