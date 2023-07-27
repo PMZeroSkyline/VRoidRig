@@ -9,7 +9,7 @@ Blender VRoid Rig Addon
   - Find the Add-On file to install
   - Click “Install Add-on”
 # Import VRM
-1. Download and install VRM-Addon-for-Blender addon. https://github.com/PMZeroSkyline/VRoidRig/releases/
+1. Download and install VRM-Addon-for-Blender addon. https://github.com/saturday06/VRM-Addon-for-Blender
 2. Import vrm model
 ![](doc/import_vrm.png)
 # Use
